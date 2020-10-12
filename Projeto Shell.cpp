@@ -10,6 +10,6 @@ printf("meu shell> ");
 fflush(stdin);
 gets(linha);
 
-}while(strcmp(linha,"exit") != 0);
+}while(strcmp(linha,"quit") != 0);
 
 }
