@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <string.h>
 #include<stdlib.h>
@@ -39,4 +40,23 @@ main(){
 	}while(strcmp(linha,"quit") != 0);
 
 	return 0;
+}
+*/
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+    char *str;
+    char str2[100] = "cat fi,le ,  ,,,,,,,,,,,,,,,,,,,,,,   ,  , ls ,         joga";
+
+    str = strtok(str2," ");
+
+    while(str!=NULL){
+        printf("%s \n", str);
+
+        str = strtok(NULL, ", ");
+    }
+
+    return 0;
 }
