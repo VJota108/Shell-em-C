@@ -57,12 +57,11 @@ int main (){
     printf("-->");
     gets(str2);
 
-    str = strtok(str2," ");
+    str = strtok(str2,", ");
 
     do{
-
-        str = strtok(NULL, ", ");
         printf("%s \n", str);
+        str = strtok(NULL, ", ");
     }while(str!=NULL);
 
     return 0;
