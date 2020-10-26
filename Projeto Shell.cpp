@@ -1,16 +1,17 @@
-/*
 #include <stdio.h>
 #include <string.h>
 #include<stdlib.h>
 
 void erroduploesp(){
 	printf("Comando invalido, verifique os espacos\n");
+	main();
 }
 
 
 main(){
-	int i=0,pos,n;
+	int i=0,n;
 	char linha[512];
+	char *str;
 	do{
 		i=0;
 		printf("meu shell> ");
@@ -29,40 +30,19 @@ main(){
 						break;
 					}
 				}
-				
-				//achar metodo para separar comandos
-				
 				i++;	
 			}
 		}
-		
+		//achar metodo para separar comandos
+			
+		str = strtok(linha,", ");
+
+    	do{
+			printf("%s \n", str);
+    		str = strtok(NULL, ", ");	
+    	}while(str!=NULL);
 			
 	}while(strcmp(linha,"quit") != 0);
 
 	return 0;
-}
-*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/wait.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <string.h>
-
-int main (){
-    char *str;
-    char str2[100]; //"cat file ,  ,,,,,,,,,,,,,,,,,,,,,,   ,  , ls ,         joga";
-
-    printf("-->");
-    gets(str2);
-
-    str = strtok(str2,", ");
-
-    do{
-        printf("%s \n", str);
-        str = strtok(NULL, ", ");
-    }while(str!=NULL);
-
-    return 0;
 }
