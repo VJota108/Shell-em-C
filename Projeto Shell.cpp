@@ -42,21 +42,28 @@ main(){
 	return 0;
 }
 */
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
 #include <string.h>
 
 int main (){
     char *str;
-    char str2[100] = "cat fi,le ,  ,,,,,,,,,,,,,,,,,,,,,,   ,  , ls ,         joga";
+    char str2[100]; //"cat file ,  ,,,,,,,,,,,,,,,,,,,,,,   ,  , ls ,         joga";
+
+    printf("-->");
+    gets(str2);
 
     str = strtok(str2," ");
 
-    while(str!=NULL){
-        printf("%s \n", str);
+    do{
 
         str = strtok(NULL, ", ");
-    }
+        printf("%s \n", str);
+    }while(str!=NULL);
 
     return 0;
 }
