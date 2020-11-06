@@ -5,7 +5,7 @@
 #include <sys/types.h>  
 #include <unistd.h>
 
-int executa_comando(char **arqv){
+int executa_comando(char **arqv){ //Funcao para executar os comandos
     pid_t pid;
     pid = fork();
     char *cmd = &*arqv[0];
@@ -16,7 +16,7 @@ int executa_comando(char **arqv){
 		exit(1);
 	}
 
-	//executar comandos
+	//Parte para executar comandos
     if(pid==0){
         if(execvp(cmd,arqv)==-1){
             printf("Comando invalido \n");
@@ -47,10 +47,9 @@ int main(){
 				
 		str1 = linha;
 		
-		//achar metodo para separar comandos
+		//Metodo para separar comandos antes de executar
 		while((token1 = strtok_r(str1,",",&str1))){
 
-			//printf("%s\n",token1);
 			
 			contv=strlen(token1);
 
@@ -60,7 +59,6 @@ int main(){
 			str2 = token1;
 			while((argumentos = strtok_r(str2," ",&str2))){
 				argv[i] = argumentos;
-				//printf("%s--\n",argv[i]);
 				i++;
 			}
 			argv[i] = NULL;
