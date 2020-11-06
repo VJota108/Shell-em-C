@@ -63,6 +63,7 @@ int main(){
 			}
 			argv[i] = NULL;
 			executa_comando(argv);
+			free(argv);
 		}
 			
 	}while(strcmp(linha,"quit") != 0);
