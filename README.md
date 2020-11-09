@@ -11,6 +11,9 @@ Não funcionou.
 Logo queremos que desconsidere este.
 Muito obrigado pela ajuda.
 -----------------------------------------------------------------------------------------
+Makefile
+Sobre o arquivo make file já está pronto para executar o arquivo do codigo em c, para isto basta o Makefile estar na mesma pasta que o codigo.c e executar pelo terminal escrevendo make dentro da pasta base onde estão os arquivos.
+-----------------------------------------------------------------------------------------
 Segue o link do GitHub onde o projeto foi compartilhado:
 https://github.com/VJota108/Shell-em-C
 
